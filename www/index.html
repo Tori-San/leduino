@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>test</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input id="picker" type="color">
+    <script>
+        var ws = new WebSocket("ws://dawn:1337")
+
+        $("#picker").on("input", function() {
+            ws.send($("#picker").val())
+        })
+    </script>
+    </body>
+</html>
