@@ -6,10 +6,14 @@
     <body>
         <input id="picker" type="color">
     <script>
-        var ws = new WebSocket("ws://dawn:1337")
+        var ws = new WebSocket("ws://" + window.location.hostname + ":1337");
+
+        ws.onmessage = function(e) {
+            $("#picker").val(e.data);
+        }
 
         $("#picker").on("input", function() {
-            ws.send($("#picker").val())
+            ws.send($("#picker").val());
         })
     </script>
     </body>
