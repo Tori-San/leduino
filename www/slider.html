@@ -1,0 +1,45 @@
+<html>
+    <head>
+
+        <!-- Include meta tag to ensure proper rendering and touch zooming -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Include jQuery Mobile stylesheets -->
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+        <!-- Include the jQuery library -->
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <!-- Include the jQuery Mobile library -->
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <!-- Include the jQuery UI library -->
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <title>Test</title>
+
+        <script>
+            $(document).ready(function() {
+                $("#sliderDiv").slider({
+                    min: 0,
+                    max: 255,
+                    orientation: "vertical",
+                    value: 0,
+                    animate: "fast",
+                    slide: function(event, ui) {
+                        $("#valueSpan").text(ui.value);
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="ui-body ui-body-a ui-corner-all">
+            <span>Value:</span> <b><span id="valueSpan">0</span></b>
+            </br />
+            <div id="sliderDiv" style="height:200px"></div>
+        </div>
+    </body>
+</html>
