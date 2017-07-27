@@ -16,7 +16,7 @@ async def hello(websocket, path):
         c = list(map(lambda x: int(x, 16), [s[i:i+2] for i in range(0, 5, 2)]))
         serial_conn.write(bytes(c))
 
-start_server = websockets.serve(hello, "dawn", 1337)
+start_server = websockets.serve(hello, "0.0.0.0", 1337)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
